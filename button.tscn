@@ -1,0 +1,106 @@
+[gd_scene load_steps=16 format=3 uid="uid://b3m2vv1xfwfu"]
+
+[ext_resource type="Script" uid="uid://cs4t1bweynk34" path="res://button.gd" id="1_n4tde"]
+[ext_resource type="Texture2D" uid="uid://bxhx8xhqpduvp" path="res://Button.png" id="2_n4tde"]
+[ext_resource type="PackedScene" uid="uid://vu30rgwhlse0" path="res://poppup_label.tscn" id="3_vxja4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxja4"]
+atlas = ExtResource("2_n4tde")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4tde"]
+atlas = ExtResource("2_n4tde")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt4la"]
+atlas = ExtResource("2_n4tde")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4amfo"]
+atlas = ExtResource("2_n4tde")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kp8h"]
+atlas = ExtResource("2_n4tde")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj86r"]
+atlas = ExtResource("2_n4tde")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7rpu"]
+atlas = ExtResource("2_n4tde")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m64rv"]
+atlas = ExtResource("2_n4tde")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47axv"]
+atlas = ExtResource("2_n4tde")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sibl"]
+atlas = ExtResource("2_n4tde")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lt4la"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxja4")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4tde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lt4la")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4amfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kp8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj86r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7rpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m64rv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47axv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sibl")
+}],
+"loop": true,
+"name": &"Pressed",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n4tde"]
+radius = 45.025
+
+[node name="Button" type="Area2D"]
+script = ExtResource("1_n4tde")
+popup_scene = ExtResource("3_vxja4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, 0.999996)
+scale = Vector2(3.96875, 4.0625)
+sprite_frames = SubResource("SpriteFrames_lt4la")
+animation = &"Pressed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+scale = Vector2(1.10999, 0.480001)
+shape = SubResource("CircleShape2D_n4tde")

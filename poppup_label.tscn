@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://vu30rgwhlse0"]
+
+[ext_resource type="FontFile" uid="uid://cvknreo7pfwob" path="res://PixelOperator8.ttf" id="1_1mqg0"]
+[ext_resource type="Script" uid="uid://bm81dapmpwxo5" path="res://poppupLabel.gd" id="2_3ehki"]
+
+[node name="PoppupLabel" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_1mqg0")
+script = ExtResource("2_3ehki")

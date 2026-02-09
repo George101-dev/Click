@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxo3n122t85w6"]
+
+[ext_resource type="PackedScene" uid="uid://b3m2vv1xfwfu" path="res://button.tscn" id="1_ig7tw"]
+[ext_resource type="FontFile" uid="uid://cvknreo7pfwob" path="res://PixelOperator8.ttf" id="2_0xm2m"]
+[ext_resource type="FontFile" uid="uid://vh3a4o7wid0j" path="res://PixelOperator8-Bold.ttf" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b3pssklvg2wep" path="res://upgrade_coins_on_click.tscn" id="4_1bvp3"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Button" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(485, 275)
+scale = Vector2(1.36, 1.44)
+
+[node name="Camera2D" type="Camera2D" parent="Button"]
+position = Vector2(63.9706, 26.3889)
+scale = Vector2(0.735294, 0.694444)
+zoom = Vector2(1.5, 1.5)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 226.0
+offset_top = 126.0
+offset_right = 318.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0.85098, 1, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("2_h2yge")
+text = "Coins:"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 318.0
+offset_top = 126.0
+offset_right = 358.0
+offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("2_0xm2m")
+text = "0"
+
+[node name="Upgrade_CoinsOnClick" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(767, 471)
+scale = Vector2(2.15817, 2.24)
