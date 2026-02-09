@@ -13,6 +13,9 @@ func spawn_popup(value: int):
 
 	popup.global_position = get_global_mouse_position()
 	popup.start(value)
+	
+
+
 func _input_event(viewport, event, shape_idx):
 	#registers if player has clicked on the button or not
 	if event is InputEventMouseButton and event.pressed:
@@ -22,6 +25,8 @@ func _input_event(viewport, event, shape_idx):
 		if event.is_action_pressed('Click'):
 			can_Click = false
 			$AnimatedSprite2D.play("Pressed") 
+			$ClickSound.play()
+			$AnimatedSprite2D.play("Pressed")
 			coins += n
 			clicks += 1
 			spawn_popup(n)
