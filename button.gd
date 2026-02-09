@@ -3,6 +3,9 @@ extends Area2D
 var coins = 0
 var clicks = 0
 var n = 1
+var upgrade_cost := 50
+var upgrade_level := 0
+var max_upgrades := 5
 var can_Click = true
 @export var popup_scene: PackedScene
 
@@ -13,6 +16,29 @@ func spawn_popup(value: int):
 
 	popup.global_position = get_global_mouse_position()
 	popup.start(value)
+	
+func try_upgrade():
+	if upgrade_level >= max_upgrades:
+		print("Max upgrades reached")
+		return
+
+	if coins < upgrade_cost:
+		print("Not enough coins")
+		return
+
+	coins -= upgrade_cost
+	n += 1
+	upgrade_level += 1
+	upgrade_cost *= 2
+
+	print("Upgraded! n =", n)
+
+func _ready():
+	var upgrade_button = $Upgrade_CoinsOnClick
+	upgrade_button.upgrade_pressed.connect(_on_upgrade_pressed)
+func _on_upgrade_pressed():
+	try_upgrade()
+	
 func _input_event(viewport, event, shape_idx):
 	#registers if player has clicked on the button or not
 	if event is InputEventMouseButton and event.pressed:
