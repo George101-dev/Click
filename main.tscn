@@ -34,5 +34,5 @@ theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "0"
 
 [node name="Upgrade_CoinsOnClick" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(767, 471)
+position = Vector2(752, 412)
 scale = Vector2(2.15817, 2.24)
