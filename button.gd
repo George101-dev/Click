@@ -1,6 +1,7 @@
 extends Area2D
 
 var coins = 0
+var upgradeCost = 100
 var clicks = 0
 var n = 1
 var can_Click = true
@@ -26,7 +27,7 @@ func _input_event(viewport, event, shape_idx):
 			can_Click = false
 			$AnimatedSprite2D.play("Pressed") 
 			$ClickSound.play()
-			$AnimatedSprite2D.play("Pressed")
+			
 			coins += n
 			clicks += 1
 			spawn_popup(n)
@@ -35,13 +36,13 @@ func _input_event(viewport, event, shape_idx):
 			
 			# score multiplier
 			if clicks >= 100 and n == 1:
-				n = 2
+				pass
 				print('Multiplier has doubled!!')
 			elif clicks >= 500 and n == 2:
-				n = 4
+				pass
 				print('Multiplier has doubled!!')
 			elif clicks >= 1000 and n == 4:
-				n = 8
+				pass
 				print('Multiplier has doubled!!')
 			await get_tree().create_timer(0.5).timeout
 			$AnimatedSprite2D.play("Idle") 
