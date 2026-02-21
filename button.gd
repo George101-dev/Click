@@ -1,11 +1,13 @@
 extends Area2D
 
 var coins = 0
-var upgradeCost = 100
+var upgradeCost = 50
 var clicks = 0
 var n = 1
 var can_Click = true
 @export var popup_scene: PackedScene
+
+
 
 #shows you how much was added to your score and then fades out, check poppupLable to see the code
 func spawn_popup(value: int):
@@ -47,3 +49,20 @@ func _input_event(viewport, event, shape_idx):
 			await get_tree().create_timer(0.5).timeout
 			$AnimatedSprite2D.play("Idle") 
 			can_Click = true
+
+
+func _on_upgrade_coins_on_click_upgrade_pressed() -> void:
+	try_upgrade()
+
+
+func try_upgrade():
+	if coins < upgradeCost:
+		print('You can not afford this upgrade!')
+	elif coins > upgradeCost or coins == upgradeCost:
+		coins -= upgradeCost
+		$"../Label2".text = str(coins)
+		n *= 2
+		upgradeCost += 50
+		print('Coin gain upgraded!');
+		
+		

@@ -42,13 +42,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Press",
-"speed": 7.0
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbqbx"]
 radius = 9.05539
 
 [node name="Upgrade_CoinsOnClick" type="Area2D"]
+scale = Vector2(1.57636, 1.74726)
 script = ExtResource("1_jccub")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -56,6 +57,7 @@ position = Vector2(19, 0)
 scale = Vector2(1.41146, 1.30208)
 sprite_frames = SubResource("SpriteFrames_vp04q")
 animation = &"Press"
+frame_progress = 0.631569
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-34, 2)

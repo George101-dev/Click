@@ -7,11 +7,11 @@
 [node name="Main" type="Node2D"]
 
 [node name="Button" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(485, 275)
+position = Vector2(483, 271)
 scale = Vector2(1.36, 1.44)
 
 [node name="Camera2D" type="Camera2D" parent="Button"]
-position = Vector2(0.735302, -7.62939e-06)
+position = Vector2(33.0882, 7.63888)
 scale = Vector2(0.735294, 0.694444)
 zoom = Vector2(1.5, 1.5)
 
