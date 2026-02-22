@@ -31,3 +31,11 @@ offset_right = 307.0
 offset_bottom = 133.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "0"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 607.0
+offset_top = 470.0
+offset_right = 683.0
+offset_bottom = 493.0
+theme_override_fonts/font = ExtResource("2_0xm2m")
+text = "Price: 50 coins"

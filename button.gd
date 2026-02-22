@@ -35,6 +35,7 @@ func _input_event(viewport, event, shape_idx):
 			spawn_popup(n)
 			#print('Score: ', score)
 			$"../Label2".text = str(coins)
+			update_upgrade_label()
 			
 			# score multiplier
 			if clicks >= 100 and n == 1:
@@ -49,6 +50,8 @@ func _input_event(viewport, event, shape_idx):
 			await get_tree().create_timer(0.5).timeout
 			$AnimatedSprite2D.play("Idle") 
 			can_Click = true
+				
+			
 
 
 func _on_upgrade_coins_on_click_upgrade_pressed() -> void:
@@ -63,6 +66,17 @@ func try_upgrade():
 		$"../Label2".text = str(coins)
 		n *= 2
 		upgradeCost += 50
+		$"../Label3".text = "Price: " + str(upgradeCost) + " coins"
+		update_upgrade_label()
 		print('Coin gain upgraded!');
 		
-		
+				
+func update_upgrade_label():
+	$"../Label3".text = "Price: " + str(upgradeCost) + " coins"
+	
+	if coins >= upgradeCost:
+		$"../Label3".modulate = Color.GREEN
+	else:
+		$"../Label3".modulate = Color.RED
+func _ready() -> void:
+	update_upgrade_label()
