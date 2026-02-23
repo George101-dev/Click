@@ -1,16 +1,16 @@
 extends Area2D
 
-var coins = 0
+var coins = 0.00
 var upgradeCost = 50
 var clicks = 0
-var n = 1
+var n = 1.00
 var can_Click = true
 @export var popup_scene: PackedScene
 
 
 
 #shows you how much was added to your score and then fades out, check poppupLable to see the code
-func spawn_popup(value: int):
+func spawn_popup(value):
 	var popup = popup_scene.instantiate()
 	get_tree().current_scene.add_child(popup)
 
@@ -34,7 +34,7 @@ func _input_event(viewport, event, shape_idx):
 			clicks += 1
 			spawn_popup(n)
 			#print('Score: ', score)
-			$"../Label2".text = str(coins)
+			$"../Label2".text = "%.2f" % coins
 			update_upgrade_label()
 			
 			# score multiplier
@@ -53,7 +53,6 @@ func _input_event(viewport, event, shape_idx):
 				
 			
 
-
 func _on_upgrade_coins_on_click_upgrade_pressed() -> void:
 	try_upgrade()
 
@@ -63,16 +62,19 @@ func try_upgrade():
 		print('You can not afford this upgrade!')
 	elif coins >= upgradeCost:
 		coins -= upgradeCost
-		$"../Label2".text = str(coins)
-		n *= 2
-		upgradeCost += 50
-		$"../Label3".text = "Price: " + str(upgradeCost) + " coins"
+		coins = round(coins)
+		$"../Label2".text = "%.2f" % coins
+		n += 0.50
+		
+		upgradeCost *= 1.15
+		upgradeCost = (upgradeCost)
+		$"../Label3".text = "Price: " + "%.2f" % upgradeCost + " coins"
 		update_upgrade_label()
 		print('Coin gain upgraded!');
 		
 				
 func update_upgrade_label():
-	$"../Label3".text = "Price: " + str(upgradeCost) + " coins"
+	$"../Label3".text = "Price: " + "%.2f" % upgradeCost + " coins"
 	
 	if coins >= upgradeCost:
 		$"../Label3".modulate = Color.GREEN
