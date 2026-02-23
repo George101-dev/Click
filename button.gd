@@ -1,7 +1,7 @@
 extends Area2D
 
 var coins = 0.00
-var upgradeCost = 50
+var upgradeCost = 50.00
 var clicks = 0
 var n = 1.00
 var can_Click = true
@@ -62,12 +62,9 @@ func try_upgrade():
 		print('You can not afford this upgrade!')
 	elif coins >= upgradeCost:
 		coins -= upgradeCost
-		coins = round(coins)
 		$"../Label2".text = "%.2f" % coins
 		n += 0.50
-		
 		upgradeCost *= 1.15
-		upgradeCost = (upgradeCost)
 		$"../Label3".text = "Price: " + "%.2f" % upgradeCost + " coins"
 		update_upgrade_label()
 		print('Coin gain upgraded!');
