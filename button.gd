@@ -53,9 +53,9 @@ func _input_event(viewport, event, shape_idx):
 				
 			
 
+# upgrades the coins you get from clicking on the button
 func _on_upgrade_coins_on_click_upgrade_pressed() -> void:
 	try_upgrade()
-
 
 func try_upgrade():
 	if coins < upgradeCost:
@@ -68,8 +68,8 @@ func try_upgrade():
 		$"../Label3".text = "Price: " + "%.2f" % upgradeCost + " coins"
 		update_upgrade_label()
 		print('Coin gain upgraded!');
-		
 				
+#updates the label showing the price for the upgrade
 func update_upgrade_label():
 	$"../Label3".text = "Price: " + "%.2f" % upgradeCost + " coins"
 	
