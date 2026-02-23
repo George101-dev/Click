@@ -61,7 +61,7 @@ func _on_upgrade_coins_on_click_upgrade_pressed() -> void:
 func try_upgrade():
 	if coins < upgradeCost:
 		print('You can not afford this upgrade!')
-	elif coins > upgradeCost or coins == upgradeCost:
+	elif coins >= upgradeCost:
 		coins -= upgradeCost
 		$"../Label2".text = str(coins)
 		n *= 2
