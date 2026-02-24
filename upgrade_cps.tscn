@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cknse13crv1v6"]
+[gd_scene load_steps=10 format=3 uid="uid://cknse13crv1v6"]
 
 [ext_resource type="Texture2D" uid="uid://edar7hblmemr" path="res://Upgrade_Button_Sprite.png" id="1_7n1ab"]
+[ext_resource type="Script" uid="uid://c67nxkni1b1sj" path="res://upgrade_cps.gd" id="1_7o2x3"]
 [ext_resource type="FontFile" uid="uid://cvknreo7pfwob" path="res://PixelOperator8.ttf" id="2_e4fp2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jlos8"]
@@ -48,6 +49,7 @@ animations = [{
 radius = 9.05539
 
 [node name="upgrade_CPS" type="Area2D"]
+script = ExtResource("1_7o2x3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(19, 0)

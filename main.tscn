@@ -7,44 +7,61 @@
 [node name="Main" type="Node2D"]
 
 [node name="Button" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(483, 271)
+position = Vector2(486, 271)
 scale = Vector2(1.36, 1.44)
 
-[node name="Camera2D" type="Camera2D" parent="Button"]
-position = Vector2(33.0882, 7.63888)
-scale = Vector2(0.735294, 0.694444)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(587, 283)
+scale = Vector2(1, 0.999999)
 zoom = Vector2(1.5, 1.5)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 175.0
-offset_top = 110.0
-offset_right = 267.0
-offset_bottom = 142.0
+offset_left = 218.0
+offset_top = 93.0
+offset_right = 310.0
+offset_bottom = 125.0
 theme_override_colors/font_color = Color(0.85098, 1, 0.0862745, 1)
 theme_override_fonts/font = ExtResource("2_h2yge")
 text = "Coins:"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 267.0
-offset_top = 110.0
-offset_right = 307.0
-offset_bottom = 133.0
+offset_left = 310.0
+offset_top = 93.0
+offset_right = 362.0
+offset_bottom = 116.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "0.00"
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 607.0
-offset_top = 470.0
-offset_right = 683.0
-offset_bottom = 493.0
+offset_left = 665.0
+offset_top = 472.0
+offset_right = 889.0
+offset_bottom = 495.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "Price: 50.00 coins"
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 610.0
+offset_left = 669.0
 offset_top = 448.0
-offset_right = 660.0
+offset_right = 719.0
 offset_bottom = 467.0
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 12
+text = "1 Lv"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 663.0
+offset_top = 322.0
+offset_right = 901.0
+offset_bottom = 345.0
+theme_override_fonts/font = ExtResource("2_0xm2m")
+text = "Price: 100.00 coins"
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 671.0
+offset_top = 295.0
+offset_right = 721.0
+offset_bottom = 314.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 theme_override_font_sizes/font_size = 12
 text = "1 Lv"

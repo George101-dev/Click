@@ -1,10 +1,13 @@
 extends Area2D
 
 var coins = 0.00
-var upgradeLevel = 1
-var upgradeCost = 50.00
+var upgradeLevelClicks = 1
+var upgradeLevelCps = 1
+var upgradeCostClicks = 50.00
+var upradeCostCps = 100.00
 var clicks = 0
 var n = 1.00
+var autoGenerates = 0.25
 var can_Click = true
 @export var popup_scene: PackedScene
 
@@ -59,26 +62,33 @@ func _on_upgrade_coins_on_click_upgrade_pressed() -> void:
 	try_upgrade()
 
 func try_upgrade():
-	if coins < upgradeCost:
+	if coins < upgradeCostClicks:
 		print('You can not afford this upgrade!')
-	elif coins >= upgradeCost:
-		coins -= upgradeCost
+	elif coins >= upgradeCostClicks:
+		coins -= upgradeCostClicks
 		$"../Label2".text = "%.2f" % coins
 		n += 0.25
-		upgradeLevel += 1
-		$"../Label4".text = str(upgradeLevel) + " Lv"
-		upgradeCost *= 1.15
-		$"../Label3".text = "Price: " + "%.2f" % upgradeCost + " coins"
+		upgradeLevelClicks += 1
+		$"../Label4".text = str(upgradeLevelClicks) + " Lv"
+		upgradeCostClicks *= 1.15
+		$"../Label3".text = "Price: " + "%.2f" % upgradeCostClicks + " coins"
 		update_upgrade_label()
 		print('Coin gain upgraded!');
 				
-#updates the label showing the price for the upgrade
+#updates the label showing the price for the click upgrade
 func update_upgrade_label():
-	$"../Label3".text = "Price: " + "%.2f" % upgradeCost + " coins"
+	$"../Label3".text = "Price: " + "%.2f" % upgradeCostClicks + " coins"
 	
-	if coins >= upgradeCost:
+	if coins >= upgradeCostClicks:
 		$"../Label3".modulate = Color.GREEN
 	else:
 		$"../Label3".modulate = Color.RED
 func _ready() -> void:
 	update_upgrade_label()
+	
+	
+	
+func _on_upgrade_cps_upgrade_cps() -> void:
+	pass 
+	
+	
