@@ -66,6 +66,7 @@ func try_upgrade():
 		$"../Label2".text = "%.2f" % coins
 		n += 0.25
 		upgradeLevel += 1
+		$"../Label4".text = str(upgradeLevel) + " Lv"
 		upgradeCost *= 1.15
 		$"../Label3".text = "Price: " + "%.2f" % upgradeCost + " coins"
 		update_upgrade_label()

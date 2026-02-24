@@ -39,3 +39,12 @@ offset_right = 683.0
 offset_bottom = 493.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "Price: 50.00 coins"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 610.0
+offset_top = 448.0
+offset_right = 660.0
+offset_bottom = 467.0
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 12
+text = "1 Lv"
