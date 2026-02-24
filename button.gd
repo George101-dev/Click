@@ -4,10 +4,10 @@ var coins = 0.00
 var upgradeLevelClicks = 1
 var upgradeLevelCps = 1
 var upgradeCostClicks = 50.00
-var upradeCostCps = 100.00
+var upgradeCostCps = 100.00
 var clicks = 0
 var n = 1.00
-var autoGenerates = 0.25
+var autoGenerates = 0
 var can_Click = true
 @export var popup_scene: PackedScene
 
@@ -39,18 +39,19 @@ func _input_event(viewport, event, shape_idx):
 			spawn_popup(n)
 			#print('Score: ', score)
 			$"../Label2".text = "%.2f" % coins
-			update_upgrade_label()
+			update_upgrade_label_clicks()
+			update_upgrade_lable_cps()
 			
 			# score multiplier
 			if clicks >= 100 and n == 1:
 				pass
-				print('Multiplier has doubled!!')
+				
 			elif clicks >= 500 and n == 2:
 				pass
-				print('Multiplier has doubled!!')
+				
 			elif clicks >= 1000 and n == 4:
 				pass
-				print('Multiplier has doubled!!')
+				
 			await get_tree().create_timer(0.5).timeout
 			$AnimatedSprite2D.play("Idle") 
 			can_Click = true
@@ -72,23 +73,54 @@ func try_upgrade():
 		$"../Label4".text = str(upgradeLevelClicks) + " Lv"
 		upgradeCostClicks *= 1.15
 		$"../Label3".text = "Price: " + "%.2f" % upgradeCostClicks + " coins"
-		update_upgrade_label()
+		update_upgrade_label_clicks()
 		print('Coin gain upgraded!');
 				
-#updates the label showing the price for the click upgrade
-func update_upgrade_label():
+#updates the label showing the price for the click and cps upgrade
+func update_upgrade_label_clicks():
 	$"../Label3".text = "Price: " + "%.2f" % upgradeCostClicks + " coins"
 	
 	if coins >= upgradeCostClicks:
 		$"../Label3".modulate = Color.GREEN
 	else:
 		$"../Label3".modulate = Color.RED
+		
+func update_upgrade_lable_cps():
+	$"../Label5".text = "Price: " + "%.2f" % upgradeCostCps + " coins"
+	if coins >= upgradeCostCps:
+		$"../Label5".modulate = Color.GREEN
+	else:
+		$"../Label5".modulate = Color.RED
+		
+		
 func _ready() -> void:
-	update_upgrade_label()
+	update_upgrade_label_clicks()
+	update_upgrade_lable_cps()
 	
 	
+# Upgrades the coins per second (CPS)
+func _on_cps_timer_timeout() -> void:
+	if autoGenerates > 0:
+		coins += autoGenerates
+		$"../Label2".text = "%.2f" % coins
+		update_upgrade_lable_cps()
+		
 	
 func _on_upgrade_cps_upgrade_cps() -> void:
-	pass 
+	try_upgrade_cps()
 	
-	
+
+func try_upgrade_cps():
+	if coins < upgradeCostCps:
+		print('You can not afford this upgrade!')
+	elif coins >= upgradeCostCps:
+		coins -= upgradeCostCps
+		upgradeCostCps *= 1.25
+		autoGenerates += 0.25
+		upgradeLevelCps += 1
+		$"../Label6".text = str(upgradeLevelCps) + " Lv"
+		$Timer.start()
+		update_upgrade_lable_cps()
+		print ("CPS upgraded")
+		
+		

@@ -124,3 +124,4 @@ scale = Vector2(1.70551, 1.79095)
 
 [connection signal="upgrade_pressed" from="Upgrade_CoinsOnClick" to="." method="_on_upgrade_coins_on_click_upgrade_pressed"]
 [connection signal="upgrade_cps" from="upgrade_CPS" to="." method="_on_upgrade_cps_upgrade_cps"]
+[connection signal="timeout" from="Timer" to="." method="_on_cps_timer_timeout"]
