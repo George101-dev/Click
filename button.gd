@@ -1,6 +1,7 @@
 extends Area2D
 
 var coins = 0.00
+var upgradeLevel = 1
 var upgradeCost = 50.00
 var clicks = 0
 var n = 1.00
@@ -63,7 +64,8 @@ func try_upgrade():
 	elif coins >= upgradeCost:
 		coins -= upgradeCost
 		$"../Label2".text = "%.2f" % coins
-		n += 0.50
+		n += 0.25
+		upgradeLevel += 1
 		upgradeCost *= 1.15
 		$"../Label3".text = "Price: " + "%.2f" % upgradeCost + " coins"
 		update_upgrade_label()

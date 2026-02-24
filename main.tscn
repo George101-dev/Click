@@ -38,4 +38,4 @@ offset_top = 470.0
 offset_right = 683.0
 offset_bottom = 493.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
-text = "Price: 50.0 coins"
+text = "Price: 50.00 coins"
