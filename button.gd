@@ -51,7 +51,7 @@ func _input_event(viewport, event, shape_idx):
 			elif clicks >= 1000 and n == 4:
 				pass
 				
-			await get_tree().create_timer(0.5).timeout
+			await get_tree().create_timer(0.25).timeout
 			$AnimatedSprite2D.play("Idle") 
 			can_Click = true
 				

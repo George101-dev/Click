@@ -87,7 +87,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Pressed",
-"speed": 20.0
+"speed": 28.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n4tde"]
@@ -102,6 +102,7 @@ position = Vector2(0.5, 0.999996)
 scale = Vector2(3.96875, 4.0625)
 sprite_frames = SubResource("SpriteFrames_lt4la")
 animation = &"Pressed"
+frame_progress = 0.48816
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
