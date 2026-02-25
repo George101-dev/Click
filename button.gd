@@ -42,7 +42,6 @@ func _input_event(viewport, event, shape_idx):
 			update_upgrade_label_clicks()
 			update_upgrade_lable_cps()
 			
-			# score multiplier
 			if clicks >= 100 and n == 1:
 				pass
 				
