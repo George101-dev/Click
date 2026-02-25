@@ -12,7 +12,6 @@ var can_Click = true
 @export var popup_scene: PackedScene
 
 
-
 #shows you how much was added to your score and then fades out, check poppupLable to see the code
 func spawn_popup(value):
 	var popup = popup_scene.instantiate()
@@ -42,6 +41,7 @@ func _input_event(viewport, event, shape_idx):
 			update_upgrade_label_clicks()
 			update_upgrade_lable_cps()
 			
+			#milestone animations for clicks go here
 			if clicks >= 100 and n == 1:
 				pass
 				
