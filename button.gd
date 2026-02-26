@@ -114,6 +114,7 @@ func try_upgrade_cps():
 		print('You can not afford this upgrade!')
 	elif coins >= upgradeCostCps:
 		coins -= upgradeCostCps
+		$"../Label2".text = "%.2f" % coins
 		upgradeCostCps *= 1.25
 		autoGenerates += 0.25
 		upgradeLevelCps += 1
