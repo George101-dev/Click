@@ -1,8 +1,8 @@
 extends Area2D
 
 var coins = 0.00
-var upgradeLevelClicks = 1
-var upgradeLevelCps = 1
+var upgradeLevelClicks = 0
+var upgradeLevelCps = 0
 var upgradeCostClicks = 50.00
 var upgradeCostCps = 100.00
 var clicks = 0
@@ -73,6 +73,7 @@ func try_upgrade():
 		upgradeCostClicks *= 1.15
 		$"../Label3".text = "Price: " + "%.2f" % upgradeCostClicks + " coins"
 		update_upgrade_label_clicks()
+		update_upgrade_lable_cps()
 		print('Coin gain upgraded!');
 				
 #updates the label showing the price for the click and cps upgrade
@@ -103,6 +104,7 @@ func _on_cps_timer_timeout() -> void:
 		coins += autoGenerates
 		$"../Label2".text = "%.2f" % coins
 		update_upgrade_lable_cps()
+		update_upgrade_label_clicks()
 		
 	
 func _on_upgrade_cps_upgrade_cps() -> void:
@@ -121,6 +123,7 @@ func try_upgrade_cps():
 		$"../Label6".text = str(upgradeLevelCps) + " Lv"
 		$Timer.start()
 		update_upgrade_lable_cps()
+		update_upgrade_label_clicks()
 		print ("CPS upgraded")
 		
 		

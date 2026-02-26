@@ -47,7 +47,7 @@ offset_right = 719.0
 offset_bottom = 467.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 theme_override_font_sizes/font_size = 12
-text = "1 Lv"
+text = "0 Lv"
 
 [node name="Label5" type="Label" parent="."]
 offset_left = 663.0
@@ -58,10 +58,10 @@ theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "Price: 100.00 coins"
 
 [node name="Label6" type="Label" parent="."]
-offset_left = 671.0
+offset_left = 670.0
 offset_top = 295.0
-offset_right = 721.0
+offset_right = 720.0
 offset_bottom = 314.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 theme_override_font_sizes/font_size = 12
-text = "1 Lv"
+text = "0 Lv"
