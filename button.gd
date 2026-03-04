@@ -37,7 +37,6 @@ func _input_event(viewport, event, shape_idx):
 			coins += n
 			clicks += 1
 			spawn_popup(n)
-			#print('Score: ', score)
 			$"../Label2".text = "%.2f" % coins
 			update_upgrade_label_clicks()
 			update_upgrade_lable_cps()
@@ -84,14 +83,14 @@ func update_upgrade_label_clicks():
 	if coins >= upgradeCostClicks:
 		$"../Label3".modulate = Color.GREEN
 	else:
-		$"../Label3".modulate = Color.RED
+		$"../Label3".modulate = Color.ORANGE_RED
 		
 func update_upgrade_lable_cps():
 	$"../Label5".text = "Price: " + "%.2f" % upgradeCostCps + " coins"
 	if coins >= upgradeCostCps:
 		$"../Label5".modulate = Color.GREEN
 	else:
-		$"../Label5".modulate = Color.RED
+		$"../Label5".modulate = Color.ORANGE_RED
 		
 		
 func _ready() -> void:
@@ -118,7 +117,7 @@ func try_upgrade_cps():
 	elif coins >= upgradeCostCps:
 		coins -= upgradeCostCps
 		$"../Label2".text = "%.2f" % coins
-		upgradeCostCps *= 1.25
+		upgradeCostCps *= 1.20
 		autoGenerates += 0.25
 		upgradeLevelCps += 1
 		$"../Label6".text = str(upgradeLevelCps) + " Lv"
@@ -126,5 +125,4 @@ func try_upgrade_cps():
 		update_upgrade_lable_cps()
 		update_upgrade_label_clicks()
 		print ("CPS upgraded")
-		
 		

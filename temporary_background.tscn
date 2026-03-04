@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4dtvwhcvx8vm"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_d5tbr"]
+
+[node name="TemporaryBackground" type="Sprite2D"]
+modulate = Color(0, 0.458824, 0.678431, 1)
+position = Vector2(3.25, 1.25)
+scale = Vector2(7.5, 3.5)
+texture = SubResource("CanvasTexture_d5tbr")
