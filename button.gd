@@ -7,10 +7,11 @@ var upgradeCostClicks = 50.00
 var upgradeCostCps = 100.00
 var clicks = 0
 var n = 1.00
-var bonus_n = n * 2
 var autoGenerates = 0
 var can_Click = true
 @export var popup_scene: PackedScene
+
+
 
 
 #shows you how much was added to your score and then fades out, check poppupLable to see the code
