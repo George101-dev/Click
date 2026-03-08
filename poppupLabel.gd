@@ -2,8 +2,13 @@ extends Label
 
 
 #Plays the animation for showing you how much was added to your score after clicking the button and then goes up and fades out
-func start(value):
+func start(value, is_crit):
 	text = "+" + "%.2f" % value
+	if is_crit:
+		modulate = Color.GOLD
+	else:
+		modulate = Color.WHITE
+	
 	modulate.a = 1.0
 	
 	var tween = get_tree().create_tween()

@@ -7,6 +7,8 @@ var upgradeCostClicks = 50.00
 var upgradeCostCps = 100.00
 var clicks = 0
 var n = 1.00
+var critChance = 5
+var critMultiplier = 2.00
 var autoGenerates = 0
 var can_Click = true
 @export var popup_scene: PackedScene
@@ -15,12 +17,12 @@ var can_Click = true
 
 
 #shows you how much was added to your score and then fades out, check poppupLable to see the code
-func spawn_popup(value):
+func spawn_popup(value, is_crit = false):
 	var popup = popup_scene.instantiate()
 	get_tree().current_scene.add_child(popup)
 
 	popup.global_position = get_global_mouse_position()
-	popup.start(value)
+	popup.start(value, is_crit)
 	
 
 
@@ -32,13 +34,20 @@ func _input_event(viewport, event, shape_idx):
 			return
 		if event.is_action_pressed('Click'):
 			can_Click = false
+			
 			$AnimatedSprite2D.play("Pressed") 
 			$ClickSound.play()
 			
-			coins += n
+			if randi_range(1, 100) <= critChance:
+				coins += n * critMultiplier
+				spawn_popup(n * critMultiplier, true)
+				$"../Label2".text = "%.2f" % coins
+			else:
+				coins += n
+				spawn_popup(n, false)
+				$"../Label2".text = "%.2f" % coins
 			clicks += 1
-			spawn_popup(n)
-			$"../Label2".text = "%.2f" % coins
+			
 			update_upgrade_label_clicks()
 			update_upgrade_lable_cps()
 			
