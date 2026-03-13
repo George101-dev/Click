@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b3m2vv1xfwfu"]
+[gd_scene load_steps=20 format=3 uid="uid://b3m2vv1xfwfu"]
 
 [ext_resource type="Script" uid="uid://cs4t1bweynk34" path="res://button.gd" id="1_n4tde"]
 [ext_resource type="Texture2D" uid="uid://bxhx8xhqpduvp" path="res://Button.png" id="2_n4tde"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bvxwcysibq1ho" path="res://universfield-computer-mouse-click-02-383961.mp3" id="4_lt4la"]
 [ext_resource type="PackedScene" uid="uid://b3pssklvg2wep" path="res://upgrade_coins_on_click.tscn" id="5_4amfo"]
 [ext_resource type="PackedScene" uid="uid://cknse13crv1v6" path="res://upgrade_cps.tscn" id="6_2kp8h"]
+[ext_resource type="PackedScene" uid="uid://d2eei7hcnw148" path="res://crit_multiplier_upgrade.tscn" id="7_lj86r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vxja4"]
 atlas = ExtResource("2_n4tde")
@@ -98,14 +99,14 @@ script = ExtResource("1_n4tde")
 popup_scene = ExtResource("3_vxja4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.5, 0.999996)
+position = Vector2(0.5, -14)
 scale = Vector2(3.96875, 4.0625)
 sprite_frames = SubResource("SpriteFrames_lt4la")
 animation = &"Pressed"
 frame_progress = 0.48816
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -13)
+position = Vector2(0, -28)
 scale = Vector2(1.10999, 0.480001)
 shape = SubResource("CircleShape2D_n4tde")
 
@@ -114,15 +115,20 @@ stream = ExtResource("4_lt4la")
 volume_db = -6.0
 
 [node name="Upgrade_CoinsOnClick" parent="." instance=ExtResource("5_4amfo")]
-position = Vector2(209, 96)
+position = Vector2(209, 91)
 scale = Vector2(1.69636, 1.74726)
 
 [node name="upgrade_CPS" parent="." instance=ExtResource("6_2kp8h")]
-position = Vector2(210, -11)
+position = Vector2(210, -9)
 scale = Vector2(1.70551, 1.79095)
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="CritMultiplierUpgrade" parent="." instance=ExtResource("7_lj86r")]
+position = Vector2(207, -111)
+scale = Vector2(1.64047, 1.8221)
+
 [connection signal="upgrade_pressed" from="Upgrade_CoinsOnClick" to="." method="_on_upgrade_coins_on_click_upgrade_pressed"]
 [connection signal="upgrade_cps" from="upgrade_CPS" to="." method="_on_upgrade_cps_upgrade_cps"]
 [connection signal="timeout" from="Timer" to="." method="_on_cps_timer_timeout"]
+[connection signal="upgrade_crit" from="CritMultiplierUpgrade" to="." method="_on_crit_multiplier_upgrade_crit"]

@@ -3,8 +3,10 @@ extends Area2D
 var coins = 0.00
 var upgradeLevelClicks = 0
 var upgradeLevelCps = 0
+var upgradeLevelCrit = 0
 var upgradeCostClicks = 50.00
 var upgradeCostCps = 100.00
+var upgradeCostCrit = 150.00
 var clicks = 0
 var n = 1.00
 var critChance = 2.5
@@ -50,6 +52,7 @@ func _input_event(viewport, event, shape_idx):
 			
 			update_upgrade_label_clicks()
 			update_upgrade_lable_cps()
+			update_upgrade_label_crit()
 			
 			#milestone animations for clicks go here
 			if clicks >= 100 and n == 1:
@@ -84,8 +87,9 @@ func try_upgrade():
 		$"../Label3".text = "Price: " + "%.2f" % upgradeCostClicks + " coins"
 		update_upgrade_label_clicks()
 		update_upgrade_lable_cps()
-		print('Coin gain upgraded!');
-				
+		update_upgrade_label_crit()
+
+
 #updates the label showing the price for the click and cps upgrade
 func update_upgrade_label_clicks():
 	$"../Label3".text = "Price: " + "%.2f" % upgradeCostClicks + " coins"
@@ -101,13 +105,21 @@ func update_upgrade_lable_cps():
 		$"../Label5".modulate = Color.GREEN
 	else:
 		$"../Label5".modulate = Color.ORANGE_RED
-		
-		
+	
+func update_upgrade_label_crit():
+	$"../Label7".text = "Price: " + "%.2f" % upgradeCostCrit + " coins"
+	if coins >= upgradeCostCrit:
+		$"../Label7".modulate = Color.GREEN
+	else:
+		$"../Label7".modulate = Color.ORANGE_RED
+
+
 func _ready() -> void:
 	update_upgrade_label_clicks()
 	update_upgrade_lable_cps()
-	
-	
+	update_upgrade_label_crit()
+
+
 # Upgrades the coins per second (CPS)
 func _on_cps_timer_timeout() -> void:
 	if autoGenerates > 0:
@@ -134,5 +146,21 @@ func try_upgrade_cps():
 		$Timer.start()
 		update_upgrade_lable_cps()
 		update_upgrade_label_clicks()
-		print ("CPS upgraded")
-		
+
+# Upgrades the critical click multiplier
+func _on_crit_multiplier_upgrade_crit() -> void:
+	try_upgrade_crit()
+
+func try_upgrade_crit():
+	if coins < upgradeCostCrit:
+		print('You can not afford this upgrade!')
+	elif coins >= upgradeCostCrit:
+		coins -= upgradeCostCrit
+		$"../Label7".text = "%.2f" % coins
+		upgradeCostCrit *= 1.25
+		critMultiplier += 0.25
+		upgradeLevelCrit += 1
+		$"../Label8".text = str(upgradeLevelCrit) + " Lv"
+		update_upgrade_label_crit()
+		update_upgrade_lable_cps()
+		update_upgrade_label_clicks()
