@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3m2vv1xfwfu"]
+[gd_scene load_steps=21 format=3 uid="uid://b3m2vv1xfwfu"]
 
 [ext_resource type="Script" uid="uid://cs4t1bweynk34" path="res://button.gd" id="1_n4tde"]
 [ext_resource type="Texture2D" uid="uid://bxhx8xhqpduvp" path="res://Button.png" id="2_n4tde"]
+[ext_resource type="PackedScene" uid="uid://ru07b3s8v58d" path="res://100_clicks_achievement_animation.tscn" id="3_d7rpu"]
 [ext_resource type="PackedScene" uid="uid://vu30rgwhlse0" path="res://poppup_label.tscn" id="3_vxja4"]
 [ext_resource type="AudioStream" uid="uid://bvxwcysibq1ho" path="res://universfield-computer-mouse-click-02-383961.mp3" id="4_lt4la"]
 [ext_resource type="PackedScene" uid="uid://b3pssklvg2wep" path="res://upgrade_coins_on_click.tscn" id="5_4amfo"]
@@ -97,6 +98,7 @@ radius = 45.025
 [node name="Button" type="Area2D"]
 script = ExtResource("1_n4tde")
 popup_scene = ExtResource("3_vxja4")
+milestone100_scene = ExtResource("3_d7rpu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.5, -14)

@@ -14,9 +14,16 @@ var critMultiplier = 2.00
 var autoGenerates = 0
 var can_Click = true
 @export var popup_scene: PackedScene
+@export var milestone100_scene: PackedScene
 
 
 
+
+# Spawns milestone animation for 100 clicks
+func spawn_milestone(scene):
+	var milestone = scene.instantiate()
+	get_tree().current_scene.add_child(milestone)
+	milestone.position = Vector2(480, 448)
 
 #shows you how much was added to your score and then fades out, check poppupLable to see the code
 func spawn_popup(value, is_crit = false):
@@ -55,8 +62,8 @@ func _input_event(viewport, event, shape_idx):
 			update_upgrade_label_crit()
 			
 			#milestone animations for clicks go here
-			if clicks >= 100 and n == 1:
-				pass
+			if clicks == 100:
+				spawn_milestone(milestone100_scene)
 				
 			elif clicks >= 500 and n == 2:
 				pass
@@ -139,7 +146,7 @@ func try_upgrade_cps():
 	elif coins >= upgradeCostCps:
 		coins -= upgradeCostCps
 		$"../Label2".text = "%.2f" % coins
-		upgradeCostCps *= 1.20
+		upgradeCostCps *= 1.15
 		autoGenerates += 0.25
 		upgradeLevelCps += 1
 		$"../Label6".text = str(upgradeLevelCps) + " Lv"
@@ -157,7 +164,7 @@ func try_upgrade_crit():
 	elif coins >= upgradeCostCrit:
 		coins -= upgradeCostCrit
 		$"../Label7".text = "%.2f" % coins
-		upgradeCostCrit *= 1.25
+		upgradeCostCrit *= 1.15
 		critMultiplier += 0.25
 		upgradeLevelCrit += 1
 		$"../Label8".text = str(upgradeLevelCrit) + " Lv"
