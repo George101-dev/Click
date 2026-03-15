@@ -15,12 +15,18 @@ var autoGenerates = 0
 var can_Click = true
 @export var popup_scene: PackedScene
 @export var milestone100_scene: PackedScene
-
+@export var milestone500_scene: PackedScene
 
 
 
 # Spawns milestone animation for 100 clicks
-func spawn_milestone(scene):
+func spawn_milestone100(scene):
+	var milestone = scene.instantiate()
+	get_tree().current_scene.add_child(milestone)
+	milestone.position = Vector2(480, 448)
+
+# Spawns milestone animation for 500 clicks
+func spawn_milestone500(scene):
 	var milestone = scene.instantiate()
 	get_tree().current_scene.add_child(milestone)
 	milestone.position = Vector2(480, 448)
@@ -63,12 +69,12 @@ func _input_event(viewport, event, shape_idx):
 			
 			#milestone animations for clicks go here
 			if clicks == 100:
-				spawn_milestone(milestone100_scene)
+				spawn_milestone100(milestone100_scene)
 				
-			elif clicks >= 500 and n == 2:
-				pass
+			elif clicks == 500 and n == 2:
+				spawn_milestone500(milestone500_scene)
 				
-			elif clicks >= 1000 and n == 4:
+			elif clicks == 1000 and n == 4:
 				pass
 				
 			await get_tree().create_timer(0.25).timeout
