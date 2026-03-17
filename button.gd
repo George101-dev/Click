@@ -16,6 +16,7 @@ var can_Click = true
 @export var popup_scene: PackedScene
 @export var milestone100_scene: PackedScene
 @export var milestone500_scene: PackedScene
+@export var milestone1000_scene: PackedScene
 
 
 
@@ -27,6 +28,12 @@ func spawn_milestone100(scene):
 
 # Spawns milestone animation for 500 clicks
 func spawn_milestone500(scene):
+	var milestone = scene.instantiate()
+	get_tree().current_scene.add_child(milestone)
+	milestone.position = Vector2(480, 448)
+	
+# Spawns milestone animation for 1000 clicks
+func spawn_milestone1000(scene):
 	var milestone = scene.instantiate()
 	get_tree().current_scene.add_child(milestone)
 	milestone.position = Vector2(480, 448)
@@ -74,8 +81,8 @@ func _input_event(viewport, event, shape_idx):
 			elif clicks == 500:
 				spawn_milestone500(milestone500_scene)
 				
-			elif clicks == 1000 and n == 4:
-				pass
+			elif clicks == 1000:
+				spawn_milestone1000(milestone1000_scene)
 				
 			await get_tree().create_timer(0.25).timeout
 			$AnimatedSprite2D.play("Idle") 

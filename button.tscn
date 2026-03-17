@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b3m2vv1xfwfu"]
+[gd_scene load_steps=23 format=3 uid="uid://b3m2vv1xfwfu"]
 
 [ext_resource type="Script" uid="uid://cs4t1bweynk34" path="res://button.gd" id="1_n4tde"]
 [ext_resource type="Texture2D" uid="uid://bxhx8xhqpduvp" path="res://Button.png" id="2_n4tde"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bvxwcysibq1ho" path="res://universfield-computer-mouse-click-02-383961.mp3" id="4_lt4la"]
 [ext_resource type="PackedScene" uid="uid://bh1va8j7ny6ot" path="res://500_clicks_achievement_animation.tscn" id="4_m64rv"]
 [ext_resource type="PackedScene" uid="uid://b3pssklvg2wep" path="res://upgrade_coins_on_click.tscn" id="5_4amfo"]
+[ext_resource type="PackedScene" uid="uid://cs7kqpk3gpw5s" path="res://1000_clicks_achievement_animation.tscn" id="5_47axv"]
 [ext_resource type="PackedScene" uid="uid://cknse13crv1v6" path="res://upgrade_cps.tscn" id="6_2kp8h"]
 [ext_resource type="PackedScene" uid="uid://d2eei7hcnw148" path="res://crit_multiplier_upgrade.tscn" id="7_lj86r"]
 
@@ -101,6 +102,7 @@ script = ExtResource("1_n4tde")
 popup_scene = ExtResource("3_vxja4")
 milestone100_scene = ExtResource("3_d7rpu")
 milestone500_scene = ExtResource("4_m64rv")
+milestone1000_scene = ExtResource("5_47axv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.5, -14)
