@@ -71,7 +71,7 @@ func _input_event(viewport, event, shape_idx):
 			if clicks == 100:
 				spawn_milestone100(milestone100_scene)
 				
-			elif clicks == 500 and n == 2:
+			elif clicks == 500:
 				spawn_milestone500(milestone500_scene)
 				
 			elif clicks == 1000 and n == 4:
@@ -140,6 +140,7 @@ func _on_cps_timer_timeout() -> void:
 		$"../Label2".text = "%.2f" % coins
 		update_upgrade_lable_cps()
 		update_upgrade_label_clicks()
+		update_upgrade_label_crit()
 		
 	
 func _on_upgrade_cps_upgrade_cps() -> void:
