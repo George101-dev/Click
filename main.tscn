@@ -1,15 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxo3n122t85w6"]
+[gd_scene load_steps=6 format=3 uid="uid://dxo3n122t85w6"]
 
 [ext_resource type="PackedScene" uid="uid://b4dtvwhcvx8vm" path="res://temporary_background.tscn" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b3m2vv1xfwfu" path="res://button.tscn" id="1_ig7tw"]
 [ext_resource type="FontFile" uid="uid://cvknreo7pfwob" path="res://PixelOperator8.ttf" id="2_0xm2m"]
 [ext_resource type="FontFile" uid="uid://vh3a4o7wid0j" path="res://PixelOperator8-Bold.ttf" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://b64ck2uqypqym" path="res://Placeholder_Background_Sprite.png" id="2_lquwl"]
 
 [node name="Main" type="Node2D"]
 
 [node name="TemporaryBackground" parent="." instance=ExtResource("1_1bvp3")]
-position = Vector2(584, 290)
-scale = Vector2(1025.5, 592)
+position = Vector2(586, 288)
+scale = Vector2(-1.01745, 1.08768)
+texture = ExtResource("2_lquwl")
 
 [node name="Button" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(486, 271)
