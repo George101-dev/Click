@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://4c0t06odni6m"]
+[gd_scene load_steps=5 format=3 uid="uid://4c0t06odni6m"]
 
 [ext_resource type="Script" uid="uid://d26485djak7av" path="res://main_menu.gd" id="1_7vrkn"]
 [ext_resource type="FontFile" uid="uid://vh3a4o7wid0j" path="res://PixelOperator8-Bold.ttf" id="2_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://suwdtdktciu8" path="res://MainMenu_background_Sprite.png" id="2_jix8l"]
+[ext_resource type="Texture2D" uid="uid://cyvkdpuiaon63" path="res://b.png" id="4_jix8l"]
 
 [node name="Main menu" type="Node2D"]
 script = ExtResource("1_7vrkn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575.5, 322)
+scale = Vector2(5.99479, 4.99225)
+texture = ExtResource("2_jix8l")
 
 [node name="Button manager" type="Control" parent="."]
 layout_mode = 3
@@ -20,29 +27,39 @@ anchor_left = 12.675
 anchor_top = 7.625
 anchor_right = 14.575
 anchor_bottom = 8.025
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = -52.0
+offset_top = -64.0
+offset_right = -44.0
+offset_bottom = -56.0
+scale = Vector2(2.68523, 3.48)
 theme_override_fonts/font = ExtResource("2_fu7sn")
 text = "Start"
-metadata/_edit_use_anchors_ = true
 
 [node name="Options" type="Button" parent="Button manager"]
 layout_mode = 0
-offset_left = 494.0
-offset_top = 358.0
-offset_right = 608.0
-offset_bottom = 382.0
+offset_left = 413.0
+offset_top = 342.0
+offset_right = 527.0
+offset_bottom = 366.0
+scale = Vector2(2.68523, 3.48)
 theme_override_fonts/font = ExtResource("2_fu7sn")
 text = "Options"
 
 [node name="Quit" type="Button" parent="Button manager"]
 layout_mode = 0
-offset_left = 519.0
-offset_top = 412.0
-offset_right = 585.0
-offset_bottom = 436.0
+offset_left = 477.0
+offset_top = 445.0
+offset_right = 543.0
+offset_bottom = 469.0
+scale = Vector2(2.68523, 3.48)
 theme_override_fonts/font = ExtResource("2_fu7sn")
 text = "Quit"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(222, 437)
+rotation = 0.0121303
+scale = Vector2(8.69604, 8.8456)
+texture = ExtResource("4_jix8l")
 
 [connection signal="pressed" from="Button manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button manager/Options" to="." method="_on_options_pressed"]
