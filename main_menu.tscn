@@ -1,9 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://4c0t06odni6m"]
+[gd_scene load_steps=8 format=3 uid="uid://4c0t06odni6m"]
 
 [ext_resource type="Script" uid="uid://d26485djak7av" path="res://main_menu.gd" id="1_7vrkn"]
 [ext_resource type="FontFile" uid="uid://vh3a4o7wid0j" path="res://PixelOperator8-Bold.ttf" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://suwdtdktciu8" path="res://MainMenu_background_Sprite.png" id="2_jix8l"]
 [ext_resource type="Texture2D" uid="uid://cyvkdpuiaon63" path="res://b.png" id="4_jix8l"]
+
+[sub_resource type="Animation" id="Animation_jix8l"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.326377, 0.326377]
+}
+
+[sub_resource type="Animation" id="Animation_glbon"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nlkkf"]
+_data = {
+&"RESET": SubResource("Animation_glbon"),
+&"new_animation": SubResource("Animation_jix8l")
+}
 
 [node name="Main menu" type="Node2D"]
 script = ExtResource("1_7vrkn")
@@ -56,10 +93,16 @@ theme_override_fonts/font = ExtResource("2_fu7sn")
 text = "Quit"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(222, 437)
-rotation = 0.0121303
-scale = Vector2(8.69604, 8.8456)
+position = Vector2(207, 422)
+scale = Vector2(9.84419, 9.95437)
 texture = ExtResource("4_jix8l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2"]
+libraries = {
+&"": SubResource("AnimationLibrary_nlkkf")
+}
+autoplay = "new_animation"
+speed_scale = 0.75
 
 [connection signal="pressed" from="Button manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button manager/Options" to="." method="_on_options_pressed"]
