@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxo3n122t85w6"]
+[gd_scene load_steps=8 format=3 uid="uid://dxo3n122t85w6"]
 
 [ext_resource type="PackedScene" uid="uid://b4dtvwhcvx8vm" path="res://temporary_background.tscn" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://dkc5ytil6ad78" path="res://main.gd" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://b3m2vv1xfwfu" path="res://button.tscn" id="1_ig7tw"]
 [ext_resource type="FontFile" uid="uid://cvknreo7pfwob" path="res://PixelOperator8.ttf" id="2_0xm2m"]
 [ext_resource type="FontFile" uid="uid://vh3a4o7wid0j" path="res://PixelOperator8-Bold.ttf" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://b64ck2uqypqym" path="res://Placeholder_Background_Sprite.png" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cjtvnwbmnmcwn" path="res://fade_transition.tscn" id="7_5vw27"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_272bh")
 
 [node name="TemporaryBackground" parent="." instance=ExtResource("1_1bvp3")]
 position = Vector2(586, 288)
@@ -89,3 +92,6 @@ offset_bottom = 172.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 theme_override_font_sizes/font_size = 12
 text = "0 Lv"
+
+[node name="Fade_transition" parent="." instance=ExtResource("7_5vw27")]
+visible = false
