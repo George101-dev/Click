@@ -110,6 +110,24 @@ visible = false
 
 [node name="Fade_Timer" type="Timer" parent="Fade_transition"]
 
+[node name="Panel" type="Panel" parent="."]
+visible = false
+offset_left = 222.0
+offset_top = 129.0
+offset_right = 933.0
+offset_bottom = 641.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 7.0
+offset_right = 483.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("2_fu7sn")
+theme_override_font_sizes/font_size = 32
+text = "Options"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Button manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button manager/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Button manager/Quit" to="." method="_on_quit_pressed"]
