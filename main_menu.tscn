@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://4c0t06odni6m"]
+[gd_scene load_steps=10 format=3 uid="uid://4c0t06odni6m"]
 
 [ext_resource type="Script" uid="uid://d26485djak7av" path="res://main_menu.gd" id="1_7vrkn"]
 [ext_resource type="FontFile" uid="uid://vh3a4o7wid0j" path="res://PixelOperator8-Bold.ttf" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://suwdtdktciu8" path="res://MainMenu_background_Sprite.png" id="2_jix8l"]
 [ext_resource type="Texture2D" uid="uid://cyvkdpuiaon63" path="res://b.png" id="4_jix8l"]
 [ext_resource type="PackedScene" uid="uid://cjtvnwbmnmcwn" path="res://fade_transition.tscn" id="5_glbon"]
+[ext_resource type="PackedScene" uid="uid://cen7t36mmf470" path="res://optionsMenu.tscn" id="6_nlkkf"]
 
 [sub_resource type="Animation" id="Animation_glbon"]
 length = 0.001
@@ -110,23 +111,12 @@ visible = false
 
 [node name="Fade_Timer" type="Timer" parent="Fade_transition"]
 
-[node name="Panel" type="Panel" parent="."]
+[node name="OptionsMenu" parent="." instance=ExtResource("6_nlkkf")]
 visible = false
-offset_left = 222.0
-offset_top = 129.0
-offset_right = 933.0
-offset_bottom = 641.0
-
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 208.0
-offset_top = 7.0
-offset_right = 483.0
-offset_bottom = 71.0
-theme_override_fonts/font = ExtResource("2_fu7sn")
-theme_override_font_sizes/font_size = 32
-text = "Options"
-horizontal_alignment = 1
+offset_left = 221.0
+offset_top = 130.0
+offset_right = 932.0
+offset_bottom = 642.0
 
 [connection signal="pressed" from="Button manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button manager/Options" to="." method="_on_options_pressed"]

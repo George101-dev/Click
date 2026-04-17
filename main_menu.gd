@@ -9,7 +9,8 @@ func _on_start_pressed() -> void:
 	$Fade_transition/AnimationPlayer.play("fade_in")
 
 func _on_options_pressed() -> void:
-	$Panel.show()
+	$OptionsMenu.show()
+	
 	
 
 
