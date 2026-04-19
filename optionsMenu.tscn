@@ -21,21 +21,6 @@ theme_override_font_sizes/font_size = 32
 text = "Options"
 horizontal_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 266.0
-offset_top = 103.0
-offset_right = 518.0
-offset_bottom = 143.0
-color = Color(0.294118, 0.560784, 1, 0.52549)
-
-[node name="HSlider" type="HSlider" parent="."]
-layout_mode = 0
-offset_left = 270.0
-offset_top = 114.0
-offset_right = 510.0
-offset_bottom = 130.0
-
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
 offset_left = 89.0
