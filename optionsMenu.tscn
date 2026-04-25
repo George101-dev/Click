@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cen7t36mmf470"]
+[gd_scene load_steps=5 format=3 uid="uid://cen7t36mmf470"]
 
 [ext_resource type="Script" uid="uid://dnln87nvxksq6" path="res://options_menu.gd" id="1_2n46e"]
 [ext_resource type="FontFile" uid="uid://vh3a4o7wid0j" path="res://PixelOperator8-Bold.ttf" id="1_elxip"]
 [ext_resource type="FontFile" uid="uid://cvknreo7pfwob" path="res://PixelOperator8.ttf" id="2_2n46e"]
+[ext_resource type="PackedScene" uid="uid://cwyoxvfgx1v3b" path="res://volume_slider.tscn" id="4_3wkf7"]
 
 [node name="OptionsMenu" type="Panel"]
 offset_left = 1.0
@@ -23,13 +24,13 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 89.0
-offset_top = 110.0
-offset_right = 257.0
-offset_bottom = 133.0
+offset_left = 72.0
+offset_top = 109.0
+offset_right = 275.0
+offset_bottom = 132.0
 theme_override_fonts/font = ExtResource("2_2n46e")
 theme_override_font_sizes/font_size = 20
-text = "SFX Volume"
+text = "Music Volume"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -39,5 +40,15 @@ offset_right = 445.0
 offset_bottom = 448.0
 theme_override_fonts/font = ExtResource("1_elxip")
 text = "Exit options"
+
+[node name="Volume_Slider" parent="." instance=ExtResource("4_3wkf7")]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 110.0
+offset_right = 497.0
+offset_bottom = 126.0
+value = 50.0
+ticks_on_borders = true
+bus_name = "Music"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
