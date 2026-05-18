@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://xfw6j7n8gvwb"]
+
+[ext_resource type="Script" uid="uid://5je34l2hjnq4" path="res://settings_main_game.gd" id="1_8lrh3"]
+[ext_resource type="Texture2D" uid="uid://0ul4rgogd0ev" path="res://Settings_Icon_Sprite.png" id="1_p15vh"]
+[ext_resource type="PackedScene" uid="uid://cen7t36mmf470" path="res://optionsMenu.tscn" id="3_jt2fh"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_top = 1.0
+offset_right = 25.0
+offset_bottom = 28.0
+scale = Vector2(0.628496, 0.710143)
+script = ExtResource("1_8lrh3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12, 14)
+texture = ExtResource("1_p15vh")
+
+[node name="OptionsMenu" parent="." instance=ExtResource("3_jt2fh")]
+visible = false
+layout_mode = 0
+offset_left = 30.0
+offset_top = 14.0
+offset_right = 741.0
+offset_bottom = 526.0
+scale = Vector2(0.4446, 0.416416)
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

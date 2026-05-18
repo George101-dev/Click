@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxo3n122t85w6"]
+[gd_scene load_steps=9 format=3 uid="uid://dxo3n122t85w6"]
 
 [ext_resource type="PackedScene" uid="uid://b4dtvwhcvx8vm" path="res://temporary_background.tscn" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://dkc5ytil6ad78" path="res://main.gd" id="1_272bh"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://vh3a4o7wid0j" path="res://PixelOperator8-Bold.ttf" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://b64ck2uqypqym" path="res://Placeholder_Background_Sprite.png" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cjtvnwbmnmcwn" path="res://fade_transition.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://xfw6j7n8gvwb" path="res://settingsMainGame.tscn" id="8_5vw27"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_272bh")
@@ -26,19 +27,19 @@ scale = Vector2(1, 0.999999)
 zoom = Vector2(1.5, 1.5)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 218.0
-offset_top = 65.0
-offset_right = 310.0
-offset_bottom = 97.0
+offset_left = 214.0
+offset_top = 120.0
+offset_right = 306.0
+offset_bottom = 152.0
 theme_override_colors/font_color = Color(0.85098, 1, 0.0862745, 1)
 theme_override_fonts/font = ExtResource("2_h2yge")
 text = "Coins:"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 310.0
-offset_top = 65.0
-offset_right = 362.0
-offset_bottom = 88.0
+offset_left = 306.0
+offset_top = 120.0
+offset_right = 358.0
+offset_bottom = 143.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "0.00"
 
@@ -95,3 +96,10 @@ text = "0 Lv"
 
 [node name="Fade_transition" parent="." instance=ExtResource("7_5vw27")]
 visible = false
+
+[node name="TextureButton" parent="." instance=ExtResource("8_5vw27")]
+offset_left = 214.0
+offset_top = 56.0
+offset_right = 239.0
+offset_bottom = 83.0
+scale = Vector2(1.53925, 1.60289)
