@@ -58,7 +58,6 @@ offset_left = 286.0
 offset_top = 110.0
 offset_right = 497.0
 offset_bottom = 126.0
-value = 50.0
 ticks_on_borders = true
 bus_name = "Music"
 
@@ -68,7 +67,6 @@ offset_left = 287.0
 offset_top = 167.0
 offset_right = 497.0
 offset_bottom = 183.0
-value = 50.0
 bus_name = "SFX"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
