@@ -34,6 +34,7 @@ theme_override_font_sizes/font_size = 20
 text = "Music Volume"
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 106.0
 offset_top = 161.0
 offset_right = 309.0
@@ -68,5 +69,6 @@ offset_top = 167.0
 offset_right = 497.0
 offset_bottom = 183.0
 value = 50.0
+bus_name = "SFX"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
