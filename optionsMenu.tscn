@@ -59,7 +59,6 @@ offset_top = 110.0
 offset_right = 497.0
 offset_bottom = 126.0
 ticks_on_borders = true
-bus_name = "Music"
 
 [node name="Volume_Slider2" parent="." instance=ExtResource("5_17jbq")]
 layout_mode = 0
@@ -67,6 +66,5 @@ offset_left = 287.0
 offset_top = 167.0
 offset_right = 497.0
 offset_bottom = 183.0
-bus_name = "SFX"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

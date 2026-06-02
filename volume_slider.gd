@@ -1,6 +1,6 @@
 extends HSlider
 
-
+#Controls the volume settings for the music volume
 @export
 var bus_name: String
 

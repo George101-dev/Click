@@ -1,6 +1,6 @@
 extends HSlider
 
-
+#Controls the volume settings for the sfx volume
 @export
 var bus_name: String
 
