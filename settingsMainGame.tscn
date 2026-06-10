@@ -15,6 +15,7 @@ script = ExtResource("1_8lrh3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(12, 14)
+scale = Vector2(1.06364, 1)
 texture = ExtResource("1_p15vh")
 
 [node name="OptionsMenu" parent="." instance=ExtResource("3_jt2fh")]
@@ -24,7 +25,7 @@ offset_left = 30.0
 offset_top = 14.0
 offset_right = 741.0
 offset_bottom = 526.0
-scale = Vector2(0.4446, 0.416416)
+scale = Vector2(0.529019, 0.482275)
 
 [node name="Button2" type="Button" parent="OptionsMenu"]
 layout_mode = 0
