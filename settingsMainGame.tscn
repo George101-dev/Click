@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://xfw6j7n8gvwb"]
+[gd_scene load_steps=6 format=3 uid="uid://xfw6j7n8gvwb"]
 
 [ext_resource type="Script" uid="uid://5je34l2hjnq4" path="res://settings_main_game.gd" id="1_8lrh3"]
 [ext_resource type="Texture2D" uid="uid://0ul4rgogd0ev" path="res://Settings_Icon_Sprite.png" id="1_p15vh"]
 [ext_resource type="PackedScene" uid="uid://cen7t36mmf470" path="res://optionsMenu.tscn" id="3_jt2fh"]
+[ext_resource type="FontFile" uid="uid://vh3a4o7wid0j" path="res://PixelOperator8-Bold.ttf" id="4_j1i7i"]
+[ext_resource type="PackedScene" uid="uid://cjtvnwbmnmcwn" path="res://fade_transition.tscn" id="5_d4jme"]
 
 [node name="TextureButton" type="TextureButton"]
 offset_top = 1.0
@@ -24,4 +26,26 @@ offset_right = 741.0
 offset_bottom = 526.0
 scale = Vector2(0.4446, 0.416416)
 
+[node name="Button2" type="Button" parent="OptionsMenu"]
+layout_mode = 0
+offset_left = 243.872
+offset_top = 453.335
+offset_right = 491.872
+offset_bottom = 507.335
+theme_override_fonts/font = ExtResource("4_j1i7i")
+text = "Exit to main menu"
+
+[node name="Fade_transition" parent="." instance=ExtResource("5_d4jme")]
+visible = false
+layout_mode = 0
+offset_left = -22.2754
+offset_top = -18.3062
+offset_right = 1152.72
+offset_bottom = 655.694
+scale = Vector2(1.70374, 1.50694)
+
+[node name="Fade_Timer" type="Timer" parent="Fade_transition"]
+
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="OptionsMenu/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="timeout" from="Fade_transition/Fade_Timer" to="." method="_on_fade_timer_timeout"]
