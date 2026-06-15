@@ -1,22 +1,52 @@
 extends Area2D
 
 var coins = 0.00
-var upgradeLevelClicks = 0
-var upgradeLevelCps = 0
-var upgradeLevelCrit = 0
+var upgradeLevelClicks : int = 0
+var upgradeLevelCps : int = 0
+var upgradeLevelCrit : int = 0
 var upgradeCostClicks = 50.00
 var upgradeCostCps = 100.00
 var upgradeCostCrit = 150.00
-var clicks = 0
+var clicks : int = 0
 var n = 1.00
 var critChance = 2.5
 var critMultiplier = 2.00
-var autoGenerates = 0
+var autoGenerates = 0.00
 var can_Click = true
 @export var popup_scene: PackedScene
 @export var milestone100_scene: PackedScene
 @export var milestone500_scene: PackedScene
 @export var milestone1000_scene: PackedScene
+
+
+
+func _ready() -> void:
+	var dict: Dictionary = SaveManager.load_game()
+	coins = dict["coins"]
+	upgradeLevelClicks = dict["upgradeLevelClicks"]
+	upgradeLevelCps = dict["upgradeLevelCps"]
+	upgradeLevelCrit = dict["upgradeLevelCrit"]
+	upgradeCostClicks = dict["upgradeCostClicks"]
+	upgradeCostCps = dict["upgradeCostCps"]
+	upgradeCostCrit = dict["upgradeCostCrit"]
+	clicks = dict["clicks"]
+	n = dict["n"]
+	critChance = dict["critChance"]
+	critMultiplier = dict["critMultiplier"]
+	autoGenerates = dict["autoGenerates"]
+	can_Click = dict["can_Click"]
+	
+	
+	$"../Label2".text = "%.2f" % coins
+	$"../Label10".text = str(clicks)
+	$"../Label4".text = str(upgradeLevelClicks) + " Lv"
+	$"../Label6".text = str(upgradeLevelCps) + " Lv"
+	$"../Label8".text = str(upgradeLevelCrit) + " Lv"
+	
+	
+	update_upgrade_label_clicks()
+	update_upgrade_lable_cps()
+	update_upgrade_label_crit()
 
 
 
@@ -69,6 +99,7 @@ func _input_event(viewport, event, shape_idx):
 				spawn_popup(n, false)
 				$"../Label2".text = "%.2f" % coins
 			clicks += 1
+			$"../Label10".text = str(clicks)
 			
 			update_upgrade_label_clicks()
 			update_upgrade_lable_cps()
@@ -136,11 +167,6 @@ func update_upgrade_label_crit():
 		$"../Label7".modulate = Color.ORANGE_RED
 
 
-func _ready() -> void:
-	update_upgrade_label_clicks()
-	update_upgrade_lable_cps()
-	update_upgrade_label_crit()
-
 
 # Upgrades the coins per second (CPS)
 func _on_cps_timer_timeout() -> void:
@@ -192,3 +218,20 @@ func try_upgrade_crit():
 		update_upgrade_label_clicks()
 	elif upgradeLevelCrit == 50:
 		print('Max level reached!')
+
+
+func _on_button_2_pressed() -> void:
+	SaveManager.save_game({"coins" : coins, "upgradeLevelClicks" : upgradeLevelClicks, "upgradeLevelCps" : upgradeLevelCps, "upgradeLevelCrit" : upgradeLevelCrit, "upgradeCostClicks" : upgradeCostClicks, "upgradeCostCps" : upgradeCostCps, "upgradeCostCrit" : upgradeCostCrit, "clicks" : clicks, "n" : n, "critChance" : critChance, "critMultiplier" : critMultiplier, "autoGenerates" : autoGenerates, "can_Click" : can_Click})
+
+
+func _on_button_3_pressed() -> void:
+	SaveManager.reset_data()
+	$"../Fade_transition".show()
+	$"../Fade_transition/Fade_Timer".start()
+	$"../Fade_transition/AnimationPlayer".play("fade_in")
+	get_tree().change_scene_to_file("res://main_menu.tscn")
+	
+
+
+func _on_fade_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://main.tscn")

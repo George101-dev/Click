@@ -95,8 +95,44 @@ theme_override_fonts/font = ExtResource("2_0xm2m")
 theme_override_font_sizes/font_size = 12
 text = "0 Lv"
 
+[node name="Label9" type="Label" parent="."]
+offset_left = 271.0
+offset_top = 92.0
+offset_right = 371.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("2_h2yge")
+text = "Clicks:"
+
+[node name="Label10" type="Label" parent="."]
+offset_left = 374.0
+offset_top = 94.0
+offset_right = 414.0
+offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("2_0xm2m")
+text = "0"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 210.0
+offset_top = 431.0
+offset_right = 429.0
+offset_bottom = 496.0
+scale = Vector2(0.48775, 0.535323)
+theme_override_fonts/font = ExtResource("2_h2yge")
+text = "Save game"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 325.0
+offset_top = 431.0
+offset_right = 544.0
+offset_bottom = 496.0
+scale = Vector2(0.48775, 0.535323)
+theme_override_fonts/font = ExtResource("2_h2yge")
+text = "Reset game"
+
 [node name="Fade_transition" parent="." instance=ExtResource("7_5vw27")]
 visible = false
+
+[node name="Fade_Timer" type="Timer" parent="Fade_transition"]
 
 [node name="TextureButton" parent="." instance=ExtResource("8_5vw27")]
 offset_left = 214.0
@@ -109,3 +145,7 @@ scale = Vector2(1.53925, 1.60289)
 stream = ExtResource("9_kek77")
 autoplay = true
 bus = &"Music"
+
+[connection signal="pressed" from="Button2" to="Button" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="Button" method="_on_button_3_pressed"]
+[connection signal="timeout" from="Fade_transition/Fade_Timer" to="Button" method="_on_fade_timer_timeout"]

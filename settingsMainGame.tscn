@@ -29,10 +29,10 @@ scale = Vector2(0.529019, 0.482275)
 
 [node name="Button2" type="Button" parent="OptionsMenu"]
 layout_mode = 0
-offset_left = 243.872
-offset_top = 453.335
-offset_right = 491.872
-offset_bottom = 507.335
+offset_left = 238.04
+offset_top = 452.745
+offset_right = 486.04
+offset_bottom = 506.745
 theme_override_fonts/font = ExtResource("4_j1i7i")
 text = "Exit to main menu"
 
