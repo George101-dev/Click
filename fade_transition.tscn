@@ -53,6 +53,7 @@ _data = {
 }
 
 [node name="Fade_transition" type="ColorRect"]
+offset_top = -5.0
 offset_right = 1175.0
 offset_bottom = 674.0
 color = Color(0, 0, 0, 0)
