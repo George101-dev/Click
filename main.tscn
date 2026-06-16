@@ -112,19 +112,19 @@ theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "0"
 
 [node name="Button3" type="Button" parent="."]
-offset_left = 325.0
-offset_top = 431.0
-offset_right = 544.0
-offset_bottom = 496.0
+offset_left = 210.0
+offset_top = 429.0
+offset_right = 429.0
+offset_bottom = 494.0
 scale = Vector2(0.48775, 0.535323)
 theme_override_fonts/font = ExtResource("2_h2yge")
 text = "Reset game"
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 210.0
-offset_top = 431.0
+offset_top = 380.0
 offset_right = 429.0
-offset_bottom = 496.0
+offset_bottom = 445.0
 scale = Vector2(0.48775, 0.535323)
 theme_override_fonts/font = ExtResource("2_h2yge")
 text = "Save game"
