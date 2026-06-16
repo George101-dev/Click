@@ -211,7 +211,7 @@ func try_upgrade_crit():
 		print('You can not afford this upgrade!')
 	elif coins >= upgradeCostCrit && upgradeLevelCrit < 50:
 		coins -= upgradeCostCrit
-		$"../Label7".text = "%.2f" % coins
+		$"../Label2".text = "%.2f" % coins
 		upgradeCostCrit *= 1.15
 		critMultiplier += 0.25
 		upgradeLevelCrit += 1
