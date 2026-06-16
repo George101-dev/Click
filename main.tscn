@@ -111,15 +111,6 @@ offset_bottom = 117.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "0"
 
-[node name="Button2" type="Button" parent="."]
-offset_left = 210.0
-offset_top = 431.0
-offset_right = 429.0
-offset_bottom = 496.0
-scale = Vector2(0.48775, 0.535323)
-theme_override_fonts/font = ExtResource("2_h2yge")
-text = "Save game"
-
 [node name="Button3" type="Button" parent="."]
 offset_left = 325.0
 offset_top = 431.0
@@ -128,6 +119,15 @@ offset_bottom = 496.0
 scale = Vector2(0.48775, 0.535323)
 theme_override_fonts/font = ExtResource("2_h2yge")
 text = "Reset game"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 210.0
+offset_top = 431.0
+offset_right = 429.0
+offset_bottom = 496.0
+scale = Vector2(0.48775, 0.535323)
+theme_override_fonts/font = ExtResource("2_h2yge")
+text = "Save game"
 
 [node name="Fade_transition" parent="." instance=ExtResource("7_5vw27")]
 visible = false
@@ -146,6 +146,6 @@ stream = ExtResource("9_kek77")
 autoplay = true
 bus = &"Music"
 
-[connection signal="pressed" from="Button2" to="Button" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="Button" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button2" to="Button" method="_on_button_2_pressed"]
 [connection signal="timeout" from="Fade_transition/Fade_Timer" to="Button" method="_on_fade_timer_timeout"]
