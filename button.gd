@@ -131,7 +131,7 @@ func _on_upgrade_coins_on_click_upgrade_pressed() -> void:
 func try_upgrade():
 	if coins < upgradeCostClicks:
 		print('You can not afford this upgrade!')
-	elif coins >= upgradeCostClicks && upgradeLevelClicks < 50:
+	elif coins >= upgradeCostClicks && upgradeLevelClicks < 20:
 		coins -= upgradeCostClicks
 		$"../Label2".text = "%.2f" % coins
 		n += 0.25
@@ -142,7 +142,7 @@ func try_upgrade():
 		update_upgrade_label_clicks()
 		update_upgrade_lable_cps()
 		update_upgrade_label_crit()
-	elif upgradeLevelClicks == 50:
+	elif upgradeLevelClicks == 20:
 		print('Max level reached!')
 
 
@@ -188,7 +188,7 @@ func _on_upgrade_cps_upgrade_cps() -> void:
 func try_upgrade_cps():
 	if coins < upgradeCostCps:
 		print('You can not afford this upgrade!')
-	elif coins >= upgradeCostCps && upgradeLevelCps < 50:
+	elif coins >= upgradeCostCps && upgradeLevelCps < 20:
 		coins -= upgradeCostCps
 		$"../Label2".text = "%.2f" % coins
 		upgradeCostCps *= 1.15
@@ -199,7 +199,7 @@ func try_upgrade_cps():
 		update_upgrade_lable_cps()
 		update_upgrade_label_clicks()
 		update_upgrade_label_crit()
-	elif upgradeLevelCps == 50:
+	elif upgradeLevelCps == 20:
 		print('Max level reached!')
 
 # Upgrades the critical click multiplier
@@ -209,7 +209,7 @@ func _on_crit_multiplier_upgrade_crit() -> void:
 func try_upgrade_crit():
 	if coins < upgradeCostCrit:
 		print('You can not afford this upgrade!')
-	elif coins >= upgradeCostCrit && upgradeLevelCrit < 50:
+	elif coins >= upgradeCostCrit && upgradeLevelCrit < 20:
 		coins -= upgradeCostCrit
 		$"../Label2".text = "%.2f" % coins
 		upgradeCostCrit *= 1.15
@@ -219,7 +219,7 @@ func try_upgrade_crit():
 		update_upgrade_label_crit()
 		update_upgrade_lable_cps()
 		update_upgrade_label_clicks()
-	elif upgradeLevelCrit == 50:
+	elif upgradeLevelCrit == 20:
 		print('Max level reached!')
 
 

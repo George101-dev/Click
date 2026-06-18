@@ -105,9 +105,9 @@ text = "Clicks:"
 
 [node name="Label10" type="Label" parent="."]
 offset_left = 374.0
-offset_top = 94.0
+offset_top = 93.0
 offset_right = 414.0
-offset_bottom = 117.0
+offset_bottom = 116.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "0"
 
