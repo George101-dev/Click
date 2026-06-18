@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cyvkdpuiaon63" path="res://b.png" id="4_jix8l"]
 [ext_resource type="PackedScene" uid="uid://cjtvnwbmnmcwn" path="res://fade_transition.tscn" id="5_glbon"]
 [ext_resource type="PackedScene" uid="uid://cen7t36mmf470" path="res://optionsMenu.tscn" id="6_nlkkf"]
-[ext_resource type="AudioStream" uid="uid://d4fwgw32wctpt" path="res://Hazelwood - At Ease (freetouse.com).mp3" id="7_qe12f"]
+[ext_resource type="AudioStream" uid="uid://bqx7nn88rqrt" path="res://New_Project.wav" id="7_qe12f"]
 
 [sub_resource type="Animation" id="Animation_glbon"]
 length = 0.001
