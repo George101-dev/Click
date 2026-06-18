@@ -1,7 +1,7 @@
 extends Node
 
 const save_file_name: String = "user://save_clickergame.json"
-const default_dictionary: Dictionary = {"coins": 0.00, "upgradeLevelClicks": 0, "upgradeLevelCps": 0, "upgradeLevelCrit": 0, "upgradeCostClicks": 50.00, "upgradeCostCps": 100.00, "upgradeCostCrit": 150.00, "clicks": 0, "n": 1.00, "critChance": 2.5, "critMultiplier": 2.00, "autoGenerates": 0.00, "can_Click": true}
+const default_dictionary: Dictionary = {"coins": 0.00, "upgradeLevelClicks": 0, "upgradeLevelCps": 0, "upgradeLevelCrit": 0, "upgradeCostClicks": 50.00, "upgradeCostCps": 100.00, "upgradeCostCrit": 150.00, "clicks": 0, "n": 1.00, "critChance": 2.5, "critMultiplier": 2.00, "autoGenerates": 0.00}
 
 func save_game(data: Dictionary) -> void:
 	var save_file: FileAccess = FileAccess.open(save_file_name, FileAccess.WRITE)

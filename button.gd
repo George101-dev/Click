@@ -34,7 +34,7 @@ func _ready() -> void:
 	critChance = dict["critChance"]
 	critMultiplier = dict["critMultiplier"]
 	autoGenerates = dict["autoGenerates"]
-	can_Click = dict["can_Click"]
+	
 	
 	
 	$"../Label2".text = "%.2f" % coins
@@ -108,15 +108,15 @@ func _input_event(viewport, event, shape_idx):
 			#milestone animations for clicks go here
 			if clicks == 100:
 				spawn_milestone100(milestone100_scene)
-				SaveManager.save_game({"coins" : coins, "upgradeLevelClicks" : upgradeLevelClicks, "upgradeLevelCps" : upgradeLevelCps, "upgradeLevelCrit" : upgradeLevelCrit, "upgradeCostClicks" : upgradeCostClicks, "upgradeCostCps" : upgradeCostCps, "upgradeCostCrit" : upgradeCostCrit, "clicks" : clicks, "n" : n, "critChance" : critChance, "critMultiplier" : critMultiplier, "autoGenerates" : autoGenerates, "can_Click" : can_Click})
+				SaveManager.save_game({"coins" : coins, "upgradeLevelClicks" : upgradeLevelClicks, "upgradeLevelCps" : upgradeLevelCps, "upgradeLevelCrit" : upgradeLevelCrit, "upgradeCostClicks" : upgradeCostClicks, "upgradeCostCps" : upgradeCostCps, "upgradeCostCrit" : upgradeCostCrit, "clicks" : clicks, "n" : n, "critChance" : critChance, "critMultiplier" : critMultiplier, "autoGenerates" : autoGenerates})
 				
 			elif clicks == 500:
 				spawn_milestone500(milestone500_scene)
-				SaveManager.save_game({"coins" : coins, "upgradeLevelClicks" : upgradeLevelClicks, "upgradeLevelCps" : upgradeLevelCps, "upgradeLevelCrit" : upgradeLevelCrit, "upgradeCostClicks" : upgradeCostClicks, "upgradeCostCps" : upgradeCostCps, "upgradeCostCrit" : upgradeCostCrit, "clicks" : clicks, "n" : n, "critChance" : critChance, "critMultiplier" : critMultiplier, "autoGenerates" : autoGenerates, "can_Click" : can_Click})
+				SaveManager.save_game({"coins" : coins, "upgradeLevelClicks" : upgradeLevelClicks, "upgradeLevelCps" : upgradeLevelCps, "upgradeLevelCrit" : upgradeLevelCrit, "upgradeCostClicks" : upgradeCostClicks, "upgradeCostCps" : upgradeCostCps, "upgradeCostCrit" : upgradeCostCrit, "clicks" : clicks, "n" : n, "critChance" : critChance, "critMultiplier" : critMultiplier, "autoGenerates" : autoGenerates})
 				
 			elif clicks == 1000:
 				spawn_milestone1000(milestone1000_scene)
-				SaveManager.save_game({"coins" : coins, "upgradeLevelClicks" : upgradeLevelClicks, "upgradeLevelCps" : upgradeLevelCps, "upgradeLevelCrit" : upgradeLevelCrit, "upgradeCostClicks" : upgradeCostClicks, "upgradeCostCps" : upgradeCostCps, "upgradeCostCrit" : upgradeCostCrit, "clicks" : clicks, "n" : n, "critChance" : critChance, "critMultiplier" : critMultiplier, "autoGenerates" : autoGenerates, "can_Click" : can_Click})
+				SaveManager.save_game({"coins" : coins, "upgradeLevelClicks" : upgradeLevelClicks, "upgradeLevelCps" : upgradeLevelCps, "upgradeLevelCrit" : upgradeLevelCrit, "upgradeCostClicks" : upgradeCostClicks, "upgradeCostCps" : upgradeCostCps, "upgradeCostCrit" : upgradeCostCrit, "clicks" : clicks, "n" : n, "critChance" : critChance, "critMultiplier" : critMultiplier, "autoGenerates" : autoGenerates})
 				
 			await get_tree().create_timer(0.25).timeout
 			$AnimatedSprite2D.play("Idle") 
@@ -224,7 +224,7 @@ func try_upgrade_crit():
 
 
 func _on_button_2_pressed() -> void:
-	SaveManager.save_game({"coins" : coins, "upgradeLevelClicks" : upgradeLevelClicks, "upgradeLevelCps" : upgradeLevelCps, "upgradeLevelCrit" : upgradeLevelCrit, "upgradeCostClicks" : upgradeCostClicks, "upgradeCostCps" : upgradeCostCps, "upgradeCostCrit" : upgradeCostCrit, "clicks" : clicks, "n" : n, "critChance" : critChance, "critMultiplier" : critMultiplier, "autoGenerates" : autoGenerates, "can_Click" : can_Click})
+	SaveManager.save_game({"coins" : coins, "upgradeLevelClicks" : upgradeLevelClicks, "upgradeLevelCps" : upgradeLevelCps, "upgradeLevelCrit" : upgradeLevelCrit, "upgradeCostClicks" : upgradeCostClicks, "upgradeCostCps" : upgradeCostCps, "upgradeCostCrit" : upgradeCostCrit, "clicks" : clicks, "n" : n, "critChance" : critChance, "critMultiplier" : critMultiplier, "autoGenerates" : autoGenerates})
 
 
 func _on_button_3_pressed() -> void:
